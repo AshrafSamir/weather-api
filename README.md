@@ -14,7 +14,7 @@ To run this API locally, follow these steps:
 
 - Clone or download this repository to your machine.
 - Navigate to the project folder and run `npm install` to install all the dependencies.
-- Run `node app.js` to start the server on port 3000.
+- Run `nodemon src/app.js -e js,hbs` to start the server on port 4000.
 - Open your browser or any HTTP client and make a GET request to `http://localhost:4000/weather?address=cairo`.
 - You will get a JSON response with the current weather information for your city.
 
