@@ -23,18 +23,32 @@ const forecast = (latitude, longitude, callback) => {
           body.current.humidity +
           "%."
       );
-
-      callback(
-        undefined,
-        body.current.weather_descriptions[0] +
+      let data = {
+        weather_descriptions: body.current.weather_descriptions[0],
+        temperature: body.current.temperature,
+        feelslike: body.current.feelslike,
+        humidity: body.current.humidity,
+        weather_icons: body.current.weather_icons[0],
+        forecastData:
+          body.current.weather_descriptions[0] +
           ". It is currently " +
           body.current.temperature +
           " It feels like " +
           body.current.feelslike +
           " degrees out. The humidity is " +
           body.current.humidity +
-          "%."
-      );
+          "%.",
+      };
+      // let oldValue =
+      //   body.current.weather_descriptions[0] +
+      //   ". It is currently " +
+      //   body.current.temperature +
+      //   " It feels like " +
+      //   body.current.feelslike +
+      //   " degrees out. The humidity is " +
+      //   body.current.humidity +
+      //   "%.";
+      callback(undefined, data);
     }
   });
 };
